@@ -1,0 +1,395 @@
+{
+	"contractName":"auctionHouse",
+	"abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AuctionCreated",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "createBid",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IToken",
+                    "name": "tokencont",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_weth",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_timeBuffer",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_reservePrice",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "_minBidIncrementPercentage",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_duration",
+                    "type": "uint256"
+                }
+            ],
+            "name": "initialize",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "version",
+                    "type": "uint8"
+                }
+            ],
+            "name": "Initialized",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "pause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Paused",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "_minBidIncrementPercentage",
+                    "type": "uint8"
+                }
+            ],
+            "name": "setMinBidIncrementPercentage",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_reservePrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setReservePrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_timeBuffer",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_duration",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setTimes",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "settleAuction",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "settleCurrentAndCreateNewAuction",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "unpause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "amounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "auction",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "auctionnum",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "startTime",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "bidder",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "settled",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "auctionID",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "duration",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "minBidIncrementPercentage",
+            "outputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "paused",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "reservePrice",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "timeBuffer",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "tokenaddress",
+            "outputs": [
+                {
+                    "internalType": "contract IToken",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "weth",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+	"networks": {
+	"137": {
+	  "events": {},
+	  "links": {},
+	  "address": "0xb75d950124f78340ca3d89c7ca6963cf93df845b",
+	  "transactionHash": "0x7bc6bd3cda28e6eda0344ed804786038027f1b639f270812b9f7cfc3bf30fd9c "
+	}
+  }
+}

@@ -1,0 +1,18 @@
+.navbarfull{
+    background: ;
+    backdrop-filter: blur(4px);
+    position: fixed;
+    width: 100%;
+}
+
+.navimage{
+    height: calc(2.5vh + 25px);
+    margin-right: 50px;
+}
+.navlink{
+    color: white !important;
+}
+.navlink:hover{
+    color: black;
+}
+

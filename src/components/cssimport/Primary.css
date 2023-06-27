@@ -1,0 +1,174 @@
+
+.layout{
+    margin-top: 50px;
+    width: 100vw;
+    align-content: center;
+  }
+  
+  .contentboxer{
+    padding-top: calc(2.5vh + 65px);
+  }
+  
+  .backgrounder{
+      background-color:#111423;
+      min-height: 100vh;
+  }
+  
+  a { color: inherit;
+    text-decoration: inherit; 
+  } 
+  a:hover {
+      color: inherit; 
+  }
+  
+  .compbox{
+      border-radius: 3vh;
+      padding: 1vh;
+      width: calc(20vw + 200px);
+      color: white;
+      background-color: #1b223f;
+      align-content: center;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      z-index: 10;
+      animation: slide-up 1s ease;
+  }
+  
+  .comp-head-sizer{
+    font-size: 3vw;
+  }
+  
+  .comp-font-sizer{
+      font-size: calc(1vw + 13px);
+  }
+  
+  .centerlogo{
+    width: clamp(200px, 40vw, 1000px);
+    display: block;
+    padding-top: clamp(1px, 1vw, 1000px);
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 10px;
+  }
+  
+  .inputbtn {
+      color: black;
+      background-color: rgba(34,193,195,1); 
+      width: 12vw;
+      min-width: 80px;
+      min-height: 30px;
+      padding: .5vw;
+      text-align: center; 
+      font-size: calc(1vw + 8px);
+      border-radius: 4px;
+  }
+  
+  .flexit{
+      display: flex;
+      align-content: center;
+      text-align: center;
+      justify-content: center;
+  }
+  .flexitw{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .centerit{
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  .centerinput{
+      width: calc(250px + 5vw);
+      margin: auto;
+  }
+  
+  .inputbtn {
+    color: black;
+    background-color: rgb(159, 35, 251); 
+    width: 12vw;
+    min-width: 100px;
+    min-height: 40px;
+    padding: .5vw;
+    text-align: center; 
+    font-size: calc(1vw + 10px);
+    border-radius: 4px;
+  }
+  .glowit:hover {
+    background: linear-gradient(0deg, rgb(159, 35, 251), rgb(235, 54, 22) 90%);
+    color: rgb(0, 0, 0);
+  }
+  
+  .title-border{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-right: auto;
+    margin-left: auto;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    border-image: conic-gradient(from var(--angle), #1b223f,rgb(159, 35, 251)) 1;
+    --angle: 0deg;
+    animation: 3s rotate linear infinite;
+  }
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #29334f;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgb(254, 248, 238);
+  }
+  datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    align-self: center;
+  }
+  option {
+    transform: rotate(-25deg) translateX(1vw) translateY(-5px);
+    font-size: clamp(10px, 1.4vw, 100px);
+  }
+  
+  .loading-icon {
+      width: 12vw;
+      height: 12vw;
+      background: linear-gradient(to right, rgb(159, 35, 251), rgb(235, 54, 22));
+      animation: spin 2s linear infinite;
+      border-radius: 50%;
+      margin-top: 25vh;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
